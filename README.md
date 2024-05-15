@@ -10,20 +10,56 @@ This API provides user authentication functionalities, allowing users to registe
 - **Forgot Password**: Users can request a password reset email if they forget their password.
 - **Reset Password**: Users can reset their password by following a link sent via email.
 
-## Installation
-1. Clone the repository: `git clone https://github.com/Sheila-nk/user-authentication-system.git`
-2. Navigate to the project directory: `cd user-authentication-api`
-3. Install dependencies: `pip install -r requirements.txt`
-4. Set up environment variables:
-   - `FLASK_APP=run.py`: Name of the Flask application
-   - `FLASK_DEBUG=1`: Enable Debug mode
-   - `SQLALCHEMY_DATABASE_URI`: Database URI for connecting to the database
-   - `EMAIL_HOST_USER`: Email address for SMTP server authentication
-   - `EMAIL_HOST_PASSWORD`: Password for SMTP server authentication
-5. Initialize the database: `flask db init`
-6. Create database migrations: `flask db migrate`
-7. Apply migrations to the database: `flask db upgrade`
-8. Run the Flask application: `flask run`
+## Installation #1 (Local Development)
+1. Clone the repository: 
+    ```bash
+    git clone https://github.com/Sheila-nk/user-authentication-system.git
+    ```
+2. Navigate to the project directory: 
+    ```bash
+    cd user-authentication-api
+    ```
+3. Install dependencies: 
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Set up environment variables 
+   Refer to [.env-example](https://github.com/Sheila-nk/user-authentication-system/blob/main/.env-example) for instructions on setting up a `.env` file.
+
+   Once created, execute the following command:
+   ```bash
+   source .env
+   ```
+5. Generate database migrations (if there are new changes to the models, otherwise skip to step 7): 
+    ```bash
+    flask db migrate
+    ```
+6. Apply migrations to the database: 
+    ```bash
+    flask db upgrade
+    ```
+7. Run the Flask application:
+    ```bash
+    flask run
+    ```
+
+## Installation #2 (Using Docker)
+1. Clone the repository: 
+    ```bash
+    git clone https://github.com/Sheila-nk/user-authentication-system.git
+    ```
+2. Navigate to the project directory: 
+    ```bash
+    cd user-authentication-api
+    ```
+3. Build the Docker image:
+    ```bash
+    docker build -t user-authentication .
+    ```
+4. Run the Docker container:
+    ```bash
+    docker run -p 5001:5001 user-authentication
+    ```
 
 ## API Endpoints
 - `POST /auth/register`: Register a new user.
