@@ -11,7 +11,7 @@ This API provides user authentication functionalities, allowing users to registe
 - **Reset Password**: Users can reset their password by following a link sent via email.
 
 ## Installation
-1. Clone the repository: `git clone `
+1. Clone the repository: `git clone https://github.com/Sheila-nk/user-authentication-system.git`
 2. Navigate to the project directory: `cd user-authentication-api`
 3. Install dependencies: `pip install -r requirements.txt`
 4. Set up environment variables:
